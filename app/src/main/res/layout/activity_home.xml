@@ -1,63 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    android:gravity="end">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-                    <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/toolbar_home"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_scrollFlags="scroll|enterAlways"
-                        app:titleTextColor="@color/white"
-                        android:textAlignment="viewEnd"
-                        android:theme="@style/AppToolbar">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextColor="@color/white">
 
-                        <TextView
-                            android:id="@+id/tv_home_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/app_name"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="10dp"
-                            android:textSize="20sp"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/iransans_bold"
-                            />
-                    </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:id="@+id/tv_home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/iransans_bold"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
 
-                </com.google.android.material.appbar.AppBarLayout>
-
-
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <FrameLayout
         android:id="@+id/frame_main_fragment_container"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation_home"
 
         />
 
+    <!-- <androidx.cardview.widget.CardView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:cardCornerRadius="20dp"
+         android:layout_alignParentBottom="true"
+         >
+ -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:backgroundTint="@color/white"
-        app:elevation="8dp"
+        android:layout_height="?actionBarSize"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bot_nav_menu"/>
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_nvaigation"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:menu="@menu/bot_nav_menu" />
+
+
+    <!--
+        </androidx.cardview.widget.CardView>-->
+
+
     <!--  app:itemIconTint="#3F51B5"
       app:itemTextColor="#3F51B5"-->
 
