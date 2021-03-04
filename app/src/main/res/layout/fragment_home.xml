@@ -15,9 +15,9 @@
 
         <LinearLayout
             android:id="@+id/Linear_FrHome_parent"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -27,9 +27,9 @@
                     android:id="@+id/card_FrHome_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="56dp"
                     app:cardBackgroundColor="#2196F3"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    >
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -305,7 +305,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="#ff6f00"
+                        app:cardBackgroundColor="#4CAF50"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout
@@ -353,7 +353,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="#ff6f00"
+                        app:cardBackgroundColor="#E6291B"
                         app:cardCornerRadius="8dp">
 
                         <LinearLayout

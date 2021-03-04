@@ -4,37 +4,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
     tools:context=".Fragments.CountryFragment">
 
-   <ScrollView android:layout_height="match_parent"
-       android:layout_width="match_parent"
-       >
-       <LinearLayout
-           android:layout_width="@dimen/material_emphasis_medium"
-           android:layout_height="wrap_content">
-          <RelativeLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-              <androidx.cardview.widget.CardView
-              android:layout_width="match_parent"
-              android:layout_height="70dp"
-              app:cardBackgroundColor="@color/gray">
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/parent_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_search_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/bg_search"
+                    android:hint="جست و جو..."
+                    android:padding="8dp"
+                    android:textColor="#AEFFFFFF"
+                    android:textColorHint="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:drawableRight="@drawable/bg_search"
+                    android:drawablePadding="8dp"
+                    android:textDirection="rtl"
+                    />
 
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_FrCountry_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_below="@id/et_search_country"
+                    app:cardBackgroundColor="@color/gray"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/iv_FrHome_covid"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/ic_coronavirus" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@id/iv_FrHome_covid"
+                            android:text="آمار منتشر شده برای هر کشور مربوط به شبانه روز گذشته می باشد"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_FrCountry_label"
+                    android:layout_marginTop="8dp"
+                    />
 
 
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:visibility="visible"
+        android:id="@+id/spin_kit_country"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="#FF5722"
+        />
+
+ <!--   <ProgressBar
+        android:id="@+id/spin_kit_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+-->
 
 
-          </androidx.cardview.widget.CardView>
-
-
-
-
-
-          </RelativeLayout>
-       </LinearLayout>
-   </ScrollView>
 
 </RelativeLayout>

@@ -6,34 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+    <RelativeLayout
+        android:id="@+id/toolbar_chart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_home"
-            android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        >
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="viewEnd"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/white">
+            android:id="@+id/tv_home_title"
+            android:text="title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            />
 
-            <TextView
-                android:id="@+id/tv_home_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/iransans_bold"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </androidx.appcompat.widget.Toolbar>
 
-    </com.google.android.material.appbar.AppBarLayout>
+
+    </RelativeLayout>
 
 
     <FrameLayout
@@ -41,16 +34,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation_home"
+        android:layout_below="@id/toolbar_chart">
 
-        />
 
-    <!-- <androidx.cardview.widget.CardView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         app:cardCornerRadius="20dp"
-         android:layout_alignParentBottom="true"
-         >
- -->
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_home"
@@ -64,14 +51,5 @@
         app:itemIconTint="@color/bottom_nav_color"
         app:itemTextColor="@color/bottom_nav_color"
         app:menu="@menu/bot_nav_menu" />
-
-
-    <!--
-        </androidx.cardview.widget.CardView>-->
-
-
-    <!--  app:itemIconTint="#3F51B5"
-      app:itemTextColor="#3F51B5"-->
-
 
 </RelativeLayout>

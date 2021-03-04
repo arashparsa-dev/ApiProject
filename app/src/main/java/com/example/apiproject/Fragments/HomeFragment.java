@@ -68,10 +68,9 @@ public class HomeFragment extends Fragment {
         TotalRecovered = view.findViewById(R.id.tv_FrHome_TotalRecovered);
 
         parent = view.findViewById(R.id.Linear_FrHome_parent);
-        //spin_kit = view.findViewById(R.id.spin_kit);
-        SpinKit = (SpinKitView) view.findViewById(R.id.spin_kit);
-        Sprite FadingCircle = new FadingCircle();
-        SpinKit.setIndeterminateDrawable(FadingCircle);
+        SpinKit = view.findViewById(R.id.spin_kit);
+       // Sprite FadingCircle = new FadingCircle();
+       // SpinKit.setIndeterminateDrawable(FadingCircle);
 
         getResponse();
 
@@ -96,27 +95,27 @@ public class HomeFragment extends Fragment {
 
                     String NewConfirmed_ = global.getString("NewConfirmed");
                     String NewCon = decimalFormat.format(Integer.valueOf(NewConfirmed_));
-                    NewConfirmed.setText(NewCon);
+                    NewConfirmed.setText(NewCon+" +");
 
                     String TotalConfirmed_ = global.getString("TotalConfirmed");
                     String TotalCon = decimalFormat.format(Integer.valueOf(TotalConfirmed_));
-                    TotalConfirmed.setText(TotalCon);
+                    TotalConfirmed.setText(TotalCon+" +");
 
                     String NewDeaths_ = global.getString("NewDeaths");
                     String NewDea = decimalFormat.format(Integer.valueOf(NewDeaths_));
-                    NewDeaths.setText(NewDea);
+                    NewDeaths.setText(NewDea+" +");
 
                     String TotalDeaths_ = global.getString("TotalDeaths");
                     String TotalDea = decimalFormat.format(Integer.valueOf(TotalDeaths_));
-                    TotalDeaths.setText(TotalDea);
+                    TotalDeaths.setText(TotalDea+" +");
 
                     String NewRecovered_ = global.getString("NewRecovered");
                     String NewReco = decimalFormat.format(Integer.valueOf(NewRecovered_));
-                    NewRecovered.setText(NewReco);
+                    NewRecovered.setText(NewReco+" +");
 
                     String TotalRecovered_ = global.getString("TotalRecovered");
                     String TotalReco = decimalFormat.format(Integer.valueOf(TotalRecovered_));
-                    TotalRecovered.setText(TotalReco);
+                    TotalRecovered.setText(TotalReco+" +");
 
                     parent.setVisibility(View.VISIBLE);
                     SpinKit.setVisibility(View.GONE);

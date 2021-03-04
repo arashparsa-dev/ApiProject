@@ -9,20 +9,28 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.apiproject.Fragments.CountryFragment;
 import com.example.apiproject.Fragments.HomeFragment;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity   {
     BottomNavigationView bottomNavigationView;
     TextView Tv_Title;
+   // LinearLayout parent;
+    //SpinKitView spinKitView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+       // parent = findViewById(R.id.parent_country);
+       // spinKitView = findViewById(R.id.spin_kit_country);
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_home);
@@ -36,6 +44,7 @@ public class HomeActivity extends AppCompatActivity   {
 
                 switch (item.getItemId()){
                     case R.id.menuItem_country:
+                        //spinKitView.setVisibility(View.VISIBLE);
                         selectedFragment = CountryFragment.getInstance();
                         Tv_Title.setText("کشورها");
 
