@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">#3F51B5</item>
         <item name="colorAccent">#E91E63</item>
         <item name="fontFamily">@font/iransans_light</item>
+        <item name="android:typeface">monospace</item>
 
     </style>
 

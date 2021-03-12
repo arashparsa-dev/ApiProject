@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,14 +21,21 @@ import com.example.apiproject.R;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyViewHolder> {
+public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyViewHolder> implements Filterable {
 
     Context context;
     List<CountryModel> data;
 
+    List<CountryModel> data_filter;
+
+
+    FilterCountries filterCountries;
+
     public CountryAdapter(Context context, List<CountryModel> data) {
         this.context = context;
         this.data = data;
+        this.data_filter = data;
+
     }
 
     @NonNull
@@ -85,6 +94,18 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyViewHo
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+
+        if(filterCountries == null){
+
+
+            filterCountries = new FilterCountries(this,data_filter);
+
+        }
+        return filterCountries;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

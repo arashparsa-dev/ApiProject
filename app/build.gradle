@@ -49,6 +49,8 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
     //MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //calligrapher
+    implementation'me.anwarshahriar:calligrapher:1.0'
 
 
 

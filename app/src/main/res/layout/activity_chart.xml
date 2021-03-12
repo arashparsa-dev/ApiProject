@@ -11,20 +11,17 @@
         android:id="@+id/toolbar_chart"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/colorPrimary"
-        >
+        android:background="@color/colorPrimary">
+
         <TextView
+            android:id="@+id/tv_chart_nameCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_chart_nameCountry"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:text="title"
             android:layout_centerInParent="true"
-            />
-
-
+            android:text="title"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
@@ -33,25 +30,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar_chart"
-        android:layout_marginTop="8dp"
-        >
+        android:layout_marginTop="8dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            >
+            android:padding="8dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_chart_label"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     app:cardBackgroundColor="@color/gray"
-                    app:cardCornerRadius="8dp"
-                    >
+                    app:cardCornerRadius="8dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -84,67 +79,407 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/card_chart_label"
-                    app:cardBackgroundColor="#B2DFDB"
                     android:layout_marginTop="16dp"
-                    app:cardCornerRadius="8dp"
-                    >
+                    app:cardBackgroundColor="#B2DFDB"
+                    app:cardCornerRadius="8dp">
+
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="wrap_content">
+
                         <org.eazegraph.lib.charts.PieChart
-                            android:visibility="visible"
                             android:id="@+id/piechart"
                             android:layout_width="250dp"
                             android:layout_height="250dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
-                            />
+                            android:visibility="visible" />
+
+
+                            <LinearLayout
+                                android:visibility="gone"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="16sp"
+                                android:layout_below="@id/piechart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="4dp">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_baseline_stop_24"
+                                        app:tint="#4CAF50" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="4dp"
+                                        android:text="مبتلایان امروز"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="1dp"
+                                    >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_baseline_stop_24"
+                                        app:tint="#ff6f00" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="4dp"
+                                        android:text="کل مبتلایان"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="1dp"
+                                    >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_baseline_stop_24"
+                                        app:tint="#E6291B" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="4dp"
+                                        android:text="فوت شدگان امروز"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="1dp"
+                                    >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_baseline_stop_24"
+                                        app:tint="#4CAF50" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="4dp"
+                                        android:text="کل فوت شدگان"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="1dp"
+                                    >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_baseline_stop_24"
+                                        app:tint="#ffffff" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="4dp"
+                                        android:text="بهبود یافتگان امروز"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:layout_margin="1dp"
+                                    >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_baseline_stop_24"
+                                        app:tint="#2196F3" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="4dp"
+                                        android:text="کل بهبود یافتگان"
+                                        android:textColor="@color/black"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+
+
+
+
+                            </LinearLayout>
+
+
+
 
                     </RelativeLayout>
-                </androidx.cardview.widget.CardView>
 
+
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_mpchart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#B2DFDB"
                     android:layout_below="@+id/card_chart"
                     android:layout_marginTop="16dp"
-                    app:cardCornerRadius="8dp"
-                    >
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:visibility="gone"
-                        android:id="@+id/mpPieChart"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#B2DFDB"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        />
-
-                    <org.eazegraph.lib.charts.BarChart
-                        android:visibility="visible"
-                        android:id="@+id/barchart"
-                        android:layout_width="250dp"
-                        android:layout_height="250dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        />
+                        android:layout_height="wrap_content">
 
 
-                </RelativeLayout>
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/mpPieChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:visibility="gone" />
+                        <LinearLayout
+                            android:id="@+id/linear_detail_chart"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginBottom="16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:padding="4dp">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                                    app:tint="#4CAF50" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="4dp"
+                                    android:textDirection="rtl"
+                                    android:text="A. مبتلایان امروز"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal"
+                                android:layout_margin="1dp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                                    app:tint="#ff6f00" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="4dp"
+                                    android:textDirection="rtl"
+                                    android:text="B. کل مبتلایان"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal"
+                                android:layout_margin="1dp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                                    app:tint="#E6291B" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="4dp"
+                                    android:textDirection="rtl"
+                                    android:text="C. فوت شدگان امروز"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal"
+                                android:layout_margin="1dp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                                    app:tint="#FFEB3B" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="4dp"
+                                    android:textDirection="rtl"
+                                    android:text="D. کل فوت شدگان"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal"
+                                android:layout_margin="1dp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                                    app:tint="#ffffff" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="4dp"
+                                    android:textDirection="rtl"
+                                    android:text="E. بهبود یافتگان امروز"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:orientation="horizontal"
+                                android:layout_margin="1dp"
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_baseline_stop_24"
+                                    app:tint="#2196F3" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="4dp"
+                                    android:textDirection="rtl"
+                                    android:text="F. کل بهبود یافتگان"
+
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+
+
+
+
+                        </LinearLayout>
+
+
+                        <org.eazegraph.lib.charts.BarChart
+                            android:id="@+id/barchart"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toLeftOf="@+id/linear_detail_chart"
+                            android:visibility="visible" />
+                        <!--
+                                                android:rotation="270"
+                        -->
+
+
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
 
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 
 </RelativeLayout>

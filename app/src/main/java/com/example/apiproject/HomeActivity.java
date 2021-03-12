@@ -6,7 +6,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +19,10 @@ import com.example.apiproject.Fragments.CountryFragment;
 import com.example.apiproject.Fragments.HomeFragment;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.lang.reflect.Field;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class HomeActivity extends AppCompatActivity   {
     BottomNavigationView bottomNavigationView;
@@ -64,5 +70,30 @@ public class HomeActivity extends AppCompatActivity   {
             }
         });
         bottomNavigationView.setSelectedItemId(R.id.menuItem_home);
+
+
+
+      setFont();
+    }
+
+    private void setFont() {
+        String iransans_light = "iransans_light.ttf" ;
+        AssetManager assetManager = this.getAssets();
+        Typeface typeface = Typeface.createFromAsset(assetManager,iransans_light);
+        try {
+            Field field =Typeface.class.getDeclaredField("monospace");
+            field.setAccessible(true);
+            try {
+                field.set(null, typeface);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "iransans_bold.ttf", true);
     }
 }

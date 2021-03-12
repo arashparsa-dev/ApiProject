@@ -2,10 +2,13 @@ package com.example.apiproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.AssetManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -16,7 +19,10 @@ import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.BarModel;
 import org.eazegraph.lib.models.PieModel;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+
+import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class ChartActivity extends AppCompatActivity {
 
@@ -45,11 +51,11 @@ public class ChartActivity extends AppCompatActivity {
 
 
 
-        pieChart.addPieSlice(new PieModel("مبتلایان",Integer.valueOf(bundle.getString("NewConfirmed")), Color.parseColor("#4CAF50")));
+        pieChart.addPieSlice(new PieModel("مبتلایان امروز",Integer.valueOf(bundle.getString("NewConfirmed")), Color.parseColor("#4CAF50")));
         pieChart.addPieSlice(new PieModel("کل مبتلایان",Integer.valueOf(bundle.getString("TotalConfirmed")), Color.parseColor("#ff6f00")));
-        pieChart.addPieSlice(new PieModel("فوت شدگان",Integer.valueOf(bundle.getString("NewDeaths")), Color.parseColor("#E6291B")));
-        pieChart.addPieSlice(new PieModel("کل فوت شدگان",Integer.valueOf(bundle.getString("TotalDeaths")), Color.parseColor("#4CAF50")));
-        pieChart.addPieSlice(new PieModel("بهبود یافتگان",Integer.valueOf(bundle.getString("NewRecovered")), Color.parseColor("#ffffff")));
+        pieChart.addPieSlice(new PieModel("فوت شدگان امروز",Integer.valueOf(bundle.getString("NewDeaths")), Color.parseColor("#E6291B")));
+        pieChart.addPieSlice(new PieModel("کل فوت شدگان",Integer.valueOf(bundle.getString("TotalDeaths")), Color.parseColor("#FFEB3B")));
+        pieChart.addPieSlice(new PieModel("بهبود یافتگان امروز",Integer.valueOf(bundle.getString("NewRecovered")), Color.parseColor("#ffffff")));
         pieChart.addPieSlice(new PieModel("کل بهبود یافتگان",Integer.valueOf(bundle.getString("TotalRecovered")), Color.parseColor("#2196F3")));
         pieChart.startAnimation();
 
@@ -58,7 +64,7 @@ public class ChartActivity extends AppCompatActivity {
         barChart.addBar(new BarModel("A",Integer.valueOf(bundle.getString("NewConfirmed")), Color.parseColor("#4CAF50")));
         barChart.addBar(new BarModel("B",Integer.valueOf(bundle.getString("TotalConfirmed")), Color.parseColor("#ff6f00")));
         barChart.addBar(new BarModel("C",Integer.valueOf(bundle.getString("NewDeaths")), Color.parseColor("#E6291B")));
-        barChart.addBar(new BarModel("D",Integer.valueOf(bundle.getString("TotalDeaths")), Color.parseColor("#4CAF50")));
+        barChart.addBar(new BarModel("D",Integer.valueOf(bundle.getString("TotalDeaths")), Color.parseColor("#FFEB3B")));
         barChart.addBar(new BarModel("E",Integer.valueOf(bundle.getString("NewRecovered")), Color.parseColor("#ffffff")));
         barChart.addBar(new BarModel("F",Integer.valueOf(bundle.getString("TotalRecovered")), Color.parseColor("#2196F3")));
         barChart.startAnimation();
@@ -93,7 +99,28 @@ public class ChartActivity extends AppCompatActivity {
 
 
 
-
+        setFont();
 
     }
+    private void setFont() {
+        String iransans_light = "iransans_light.ttf" ;
+        AssetManager assetManager = this.getAssets();
+        Typeface typeface = Typeface.createFromAsset(assetManager,iransans_light);
+        try {
+            Field field =Typeface.class.getDeclaredField("monospace");
+            field.setAccessible(true);
+            try {
+                field.set(null, typeface);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+
+
+        Calligrapher calligrapher = new Calligrapher(this);
+        calligrapher.setFont(this, "iransans_bold.ttf", true);
+    }
+
 }
